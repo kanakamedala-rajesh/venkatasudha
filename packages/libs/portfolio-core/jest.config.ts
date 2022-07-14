@@ -7,14 +7,14 @@ const { exclude: _, ...swcJestConfig } = JSON.parse(
   readFileSync(`${__dirname}/.lib.swcrc`, 'utf-8')
 );
 export default {
-  displayName: 'core',
-  coverageDirectory: '../../../coverage/packages/libs/core',
+  displayName: 'portfolio-core',
   preset: '../../../jest.preset.js',
   transform: {
     '^.+\\.[tj]s$': ['@swc/jest', swcJestConfig]
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
 
+  coverageDirectory: '../../../coverage/packages/libs/portfolio-core',
   collectCoverage: true,
   coverageReporters: ['html', 'lcov', 'text', 'text-summary'],
   reporters: ['default']

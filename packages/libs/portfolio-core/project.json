@@ -1,0 +1,42 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/libs/portfolio-core/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:swc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/libs/portfolio-core",
+        "main": "packages/libs/portfolio-core/src/index.ts",
+        "tsConfig": "packages/libs/portfolio-core/tsconfig.lib.json",
+        "assets": ["packages/libs/portfolio-core/*.md"]
+      },
+      "dependsOn": ["lint", "^build"]
+    },
+    "publish": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "command": "node tools/scripts/publish.mjs portfolio-core {args.ver} {args.tag}"
+      },
+      "dependsOn": ["lint", "build", "test"]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/libs/portfolio-core/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/libs/portfolio-core"],
+      "options": {
+        "jestConfig": "packages/libs/portfolio-core/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "dependsOn": ["build"]
+    }
+  },
+  "tags": []
+}
