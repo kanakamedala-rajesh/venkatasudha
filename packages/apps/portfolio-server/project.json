@@ -1,0 +1,58 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/apps/portfolio-server/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:webpack",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/apps/portfolio-server",
+        "main": "packages/apps/portfolio-server/src/main.ts",
+        "tsConfig": "packages/apps/portfolio-server/tsconfig.app.json",
+        "assets": ["packages/apps/portfolio-server/src/assets"]
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "packages/apps/portfolio-server/src/environments/environment.ts",
+              "with": "packages/apps/portfolio-server/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/node:node",
+      "options": {
+        "buildTarget": "portfolio-server:build"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "portfolio-server:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/apps/portfolio-server/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/apps/portfolio-server"],
+      "options": {
+        "jestConfig": "packages/apps/portfolio-server/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "dependsOn": ["build, ^build"]
+    }
+  },
+  "tags": []
+}
