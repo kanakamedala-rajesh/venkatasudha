@@ -37,3 +37,7 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# Next PWA Files
+**/sw.js.map
+**/workbox-**.js.map
