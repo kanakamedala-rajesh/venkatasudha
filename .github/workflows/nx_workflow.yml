@@ -1,23 +1,26 @@
-name: nx build
+name: CI
 on:
   push:
     branches:
-      - dev
+      - release
   pull_request:
 
 jobs:
   main:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - name: Nx set SHAs
-      - uses: nrwl/nx-set-shas@v2.0.2
+    name: Nx Cloud - Main Job
+    uses: nrwl/ci/.github/workflows/nx-cloud-main.yml@v0.6
+    with:
+      number-of-agents: 3
+      parallel-commands: |
+        yarn nx-cloud record -- npx nx workspace-lint
+        yarn nx-cloud record -- npx nx format:check
+      parallel-commands-on-agents: |
+        yarn nx affected --target=lint --parallel=3
+        yarn nx affected --target=test --parallel=3 --ci --code-coverage
+        yarn nx affected --target=build --parallel=3
 
-      - run: yarn install --frozen-lockfile
-      - run: yarn nx workspace-lint
-      - run: yarn nx format:check
-      - run: yarn nx affected --target=lint --parallel=3
-      - run: yarn nx affected --target=test --parallel=3 --ci --code-coverage
-      - run: yarn nx affected --target=build --parallel=3
+  agents:
+    name: Nx Cloud - Agents
+    uses: nrwl/ci/.github/workflows/nx-cloud-agents.yml@v0.6
+    with:
+      number-of-agents: 3
