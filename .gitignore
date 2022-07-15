@@ -41,3 +41,5 @@ Thumbs.db
 # Next PWA Files
 **/sw.js.map
 **/workbox-**.js.map
+**/sw.js
+**/workbox-**.js

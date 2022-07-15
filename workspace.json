@@ -3,6 +3,8 @@
   "version": 2,
   "projects": {
     "core": "packages/libs/core",
+    "core-components": "packages/libs/core-components",
+    "core-components-e2e": "packages/apps/core-components-e2e",
     "portfolio-client": "packages/apps/portfolio-client",
     "portfolio-client-e2e": "packages/apps/portfolio-client-e2e",
     "portfolio-core": "packages/libs/portfolio-core",
