@@ -1,3 +1,5 @@
-@tailwind base;
+@import url('../../../libs/tailwindcss/tailwind.css');
+
 @tailwind components;
+@tailwind base;
 @tailwind utilities;

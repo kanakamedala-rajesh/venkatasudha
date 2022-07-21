@@ -21,8 +21,7 @@
             "input": ".",
             "output": "."
           }
-        ],
-        "dependsOn": ["lint"]
+        ]
       }
     },
     "lint": {
@@ -40,8 +39,7 @@
       "options": {
         "jestConfig": "packages/libs/core-components/jest.config.ts",
         "passWithNoTests": true
-      },
-      "dependsOn": ["build"]
+      }
     },
     "storybook": {
       "executor": "@nrwl/storybook:storybook",

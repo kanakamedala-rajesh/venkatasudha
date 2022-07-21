@@ -3,6 +3,7 @@ const { createGlobPatternsForDependencies } = require('@nrwl/react/tailwind');
 const { join } = require('path');
 
 module.exports = {
+  presets: [require('../tailwindcss/tailwind.config')],
   content: [
     join(
       __dirname,

@@ -5,9 +5,13 @@ export default {
   transform: {
     '^.+\\.[tj]sx?$': [
       '@swc/jest',
-      { jsc: { transform: { react: { runtime: 'automatic' } } } },
-    ],
+      { jsc: { transform: { react: { runtime: 'automatic' } } } }
+    ]
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
+
   coverageDirectory: '../../../coverage/packages/libs/core-components',
+  collectCoverage: true,
+  coverageReporters: ['html', 'lcov', 'text', 'text-summary'],
+  reporters: ['default']
 };

@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@700&family=Arsenal:ital,wght@1,400;1,700&family=Rubik:wght@300&family=Spinnaker&display=swap');
+
+@tailwind components;
+@tailwind base;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary colors */
+    --primary: 18deg 100% 33.9%;
+    --on-primary: 0deg 0% 100%;
+    --primary-container: 4deg 100% 91%;
+    --on-primary-container: 3deg 100% 11%;
+
+    /* Secondary colors */
+    --secondary: 15deg 100% 21%;
+    --on-secondary: 0deg 0% 100%;
+    --secondary-container: 14deg 90% 69%;
+    --on-secondary-container: 15deg 100% 6%;
+
+    /* Tertiary colors */
+    --tertiary: 13deg 39% 30%;
+    --on-tertiary: 0deg 0% 100%;
+    --tertiary-container: 13deg 78% 81%;
+    --on-tertiary-container: 13deg 100% 7%;
+
+    /* Error colors */
+    --error: 0deg 75% 42%;
+    --on-error: 0deg 0% 100%;
+    --error-container: 2deg 100% 92%;
+    --on-error-container: 99deg 100% 13%;
+
+    /* Background colors */
+    --background: 83deg 100% 99%;
+    --on-background: 4deg 14% 11%;
+    --surface: 83deg 100% 99%;
+    --on-surface: 4deg 14% 11%;
+
+    /* Outline colors */
+    --outline: 4deg 9% 48%;
+    --surface-variant: 4deg 60% 90%;
+    --on-surface-variant: 3deg 14% 29%;
+
+    /* Gradient colors */
+    --gradient: radial-gradient(
+      at center top,
+      rgb(2, 132, 199),
+      rgb(168, 85, 247),
+      rgb(251, 146, 60)
+    );
+  }
+
+  .dark {
+    /* Primary colors */
+    --primary: 4deg 100% 81%;
+    --on-primary: 4deg 100% 18%;
+    --primary-container: 5deg 100% 26%;
+    --on-primary-container: 4deg 100% 91%;
+
+    /* Secondary colors */
+    --secondary: 15deg 65% 58%;
+    --on-secondary: 15deg 100% 11%;
+    --secondary-container: 15deg 100% 16%;
+    --on-secondary-container: 14deg 90% 69%;
+
+    /* Tertiary colors */
+    --tertiary: 13deg 48% 70%;
+    --on-tertiary: 14deg 84% 12%;
+    --tertiary-container: 13deg 52% 21%;
+    --on-tertiary-container: 13deg 78% 81%;
+
+    /* Error colors */
+    --error: 6deg 100% 84%;
+    --on-error: 357deg 100% 21%;
+    --error-container: 356deg 100% 29%;
+    --on-error-container: 6deg 100% 92%;
+
+    /* Background colors */
+    --background: 339deg 100% 12.4%;
+    --on-background: 4deg 32% 90%;
+    --surface: 339deg 100% 12.4%;
+    --on-surface: 4deg 32% 90%;
+
+    /* Outline colors */
+    --outline: 4deg 12% 58%;
+    --surface-variant: 3deg 14% 29%;
+    --on-surface-variant: 4deg 26% 79%;
+
+    /* Gradient colors */
+    --gradient: radial-gradient(
+      at right center,
+      rgb(192, 38, 211),
+      rgb(147, 51, 234),
+      rgb(67, 56, 202)
+    );
+  }
+
+  html {
+    @apply font-spinnaker h-full select-none scroll-smooth p-4;
+  }
+
+  body {
+    @apply bg-background text-onBackground m-0 min-h-full w-screen;
+  }
+
+  h1 {
+    @apply font-arimaMadurai;
+  }
+
+  span {
+    @apply font-rubik;
+  }
+
+  .gradient-text {
+    background: var(--background); /* fallback for old browsers */
+    background-image: var(--gradient);
+    background-clip: text;
+    color: transparent;
+  }
+
+  .gradient-underlined-text {
+    text-transform: uppercase;
+    background: var(--background); /* fallback for old browsers */
+    background: var(--gradient),
+      var(--gradient) bottom 0px left 0/100% 8px no-repeat;
+    -webkit-background-clip: text, padding-box;
+    background-clip: text, padding-box;
+    color: transparent;
+  }
+
+  .navlink {
+    color: var(--on-background);
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.25em;
+    display: inline-block;
+    position: relative;
+  }
+
+  .navlink:hover::after {
+    width: 100%;
+    left: 0;
+  }
+
+  .navlink::after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    content: '';
+    display: block;
+    height: 8px;
+    position: absolute;
+    background: var(--gradient);
+    transition: width 0.5s ease-in-out 0s, left 0.5s ease 0s;
+  }
+}

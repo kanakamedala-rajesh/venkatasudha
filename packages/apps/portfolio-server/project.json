@@ -50,8 +50,7 @@
       "options": {
         "jestConfig": "packages/apps/portfolio-server/jest.config.ts",
         "passWithNoTests": true
-      },
-      "dependsOn": ["build, ^build"]
+      }
     }
   },
   "tags": []

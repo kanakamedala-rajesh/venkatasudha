@@ -1,13 +1,14 @@
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
-
 /* eslint-disable-next-line */
 export interface CoreComponentsProps {}
 
 export function CoreComponents(props: CoreComponentsProps) {
   return (
-    <div className="h-screen w-full bg-slate-100 p-8 text-center font-bold">
+    <div className="h-screen w-full p-8 text-center font-bold">
       <BrowserRouter>
-        <h1 className="py-12 text-4xl">Welcome to CoreComponents!</h1>
+        <h1 className="text-primary py-12 text-5xl">
+          Welcome to CoreComponents!
+        </h1>
 
         <ul>
           <li className="text-blue-500 hover:text-blue-900 hover:underline hover:underline-offset-2">

@@ -2,10 +2,12 @@ import { portfolioCore } from '@rajesh542/portfolio-core';
 
 export function Index() {
   return (
-    <h1 className="cursor-pointer text-center text-3xl font-bold hover:underline">
-      Hello world!
-      <span>{portfolioCore()}</span>
-    </h1>
+    <div className="flex flex-col">
+      <h1 className="text-primary cursor-pointer text-center text-5xl hover:underline">
+        Hello world!
+      </h1>
+      <span className="text-center">{portfolioCore()}</span>
+    </div>
   );
 }
 
