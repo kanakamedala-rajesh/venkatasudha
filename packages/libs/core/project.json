@@ -11,8 +11,7 @@
         "main": "packages/libs/core/src/index.ts",
         "tsConfig": "packages/libs/core/tsconfig.lib.json",
         "assets": ["packages/libs/core/*.md"]
-      },
-      "dependsOn": ["lint"]
+      }
     },
     "publish": {
       "executor": "@nrwl/workspace:run-commands",
@@ -34,8 +33,7 @@
       "options": {
         "jestConfig": "packages/libs/core/jest.config.ts",
         "passWithNoTests": true
-      },
-      "dependsOn": ["build"]
+      }
     }
   },
   "tags": []

@@ -39,7 +39,16 @@ testem.log
 Thumbs.db
 
 # Next PWA Files
-**/sw.js.map
-**/workbox-**.js.map
-**/sw.js
-**/workbox-**.js
+**/public/precache.*.*.js
+**/public/sw.js
+**/public/workbox-*.js
+**/public/worker-*.js
+**/public/fallback-*.js
+**/public/precache.*.*.js.map
+**/public/sw.js.map
+**/public/workbox-*.js.map
+**/public/worker-*.js.map
+**/public/fallback-*.js
+
+# Env variable files
+**/**.env

@@ -11,8 +11,7 @@
         "main": "packages/libs/portfolio-core/src/index.ts",
         "tsConfig": "packages/libs/portfolio-core/tsconfig.lib.json",
         "assets": ["packages/libs/portfolio-core/*.md"]
-      },
-      "dependsOn": ["lint", "^build"]
+      }
     },
     "publish": {
       "executor": "@nrwl/workspace:run-commands",
@@ -34,8 +33,7 @@
       "options": {
         "jestConfig": "packages/libs/portfolio-core/jest.config.ts",
         "passWithNoTests": true
-      },
-      "dependsOn": ["build"]
+      }
     }
   },
   "tags": []

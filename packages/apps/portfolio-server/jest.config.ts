@@ -15,6 +15,6 @@ export default {
   
   coverageDirectory: '../../../coverage/packages/apps/portfolio-server',
   collectCoverage: true,
-  coverageReporters: ['html', 'lcov', 'text', 'text-summary'],
+  coverageReporters: ['html', 'lcov', 'text-summary'],
   reporters: ['default']
 };

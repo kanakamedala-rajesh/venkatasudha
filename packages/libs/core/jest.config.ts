@@ -8,14 +8,14 @@ const { exclude: _, ...swcJestConfig } = JSON.parse(
 );
 export default {
   displayName: 'core',
-  coverageDirectory: '../../../coverage/packages/libs/core',
   preset: '../../../jest.preset.js',
   transform: {
     '^.+\\.[tj]s$': ['@swc/jest', swcJestConfig]
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
 
+  coverageDirectory: '../../../coverage/packages/libs/core',
   collectCoverage: true,
-  coverageReporters: ['html', 'lcov', 'text', 'text-summary'],
+  coverageReporters: ['html', 'lcov', 'text-summary'],
   reporters: ['default']
 };

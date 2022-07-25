@@ -9,5 +9,9 @@ export default {
     ],
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
+
   coverageDirectory: '../../../coverage/packages/libs/core-components',
+  collectCoverage: true,
+  coverageReporters: ['html', 'lcov', 'text-summary'],
+  reporters: ['default']
 };

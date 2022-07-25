@@ -16,6 +16,6 @@ export default {
 
   coverageDirectory: '../../../coverage/packages/libs/portfolio-core',
   collectCoverage: true,
-  coverageReporters: ['html', 'lcov', 'text', 'text-summary'],
+  coverageReporters: ['html', 'lcov', 'text-summary'],
   reporters: ['default']
 };
