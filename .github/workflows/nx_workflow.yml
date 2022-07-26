@@ -5,18 +5,15 @@ on:
       - dev
   pull_request:
   
-env:
-  NX_CLOUD_ACCESS_TOKEN: ${{secrets.NX_CLOUD_ACCESS_TOKEN}}
-  
 jobs:
   main:
     name: Nx Cloud - Main Job
     uses: nrwl/ci/.github/workflows/nx-cloud-main.yml@v0.6
     secrets: inherit
     with:
-      environment-variables: |
-        NX_CLOUD_ACCESS_TOKEN: ${NX_CLOUD_ACCESS_TOKEN}
       number-of-agents: 3
+      secrets: |
+        NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
       parallel-commands: |
         yarn nx-cloud record -- yarn nx workspace-lint
       parallel-commands-on-agents: |
@@ -29,5 +26,3 @@ jobs:
     uses: nrwl/ci/.github/workflows/nx-cloud-agents.yml@v0.6
     with:
       number-of-agents: 3
-      environment-variables: |
-        NX_CLOUD_ACCESS_TOKEN: ${NX_CLOUD_ACCESS_TOKEN}
