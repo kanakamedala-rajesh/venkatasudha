@@ -1,0 +1,51 @@
+name: CI Build
+on:
+  push:
+    branches:
+      - dev
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Github Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'yarn'
+
+      - name: Retrieve yarn cache files
+        uses: actions/cache@v3
+        with:
+            path: |
+              **/node_modules
+              **/.eslintcache
+              ${{ steps.yarn-cache-dir-path.outputs.dir }}
+            key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+            restore-keys: |
+                ${{ runner.os }}-yarn-
+
+      - name: Set nx SHA versions
+        uses: nrwl/nx-set-shas@v2
+
+      - run: yarn install --frozen-lockfile
+      - run: yarn nx workspace-lint
+      - run: yarn lint:all
+      - run: yarn test:all
+      - run: yarn e2e:all
+      - run: yarn reports:coverage
+
+      - name: Coveralls Reporter
+        uses: coverallsapp/github-action@master
+        with:
+            github-token: ${{ secrets.GITHUB_TOKEN }}
