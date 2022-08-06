@@ -9,10 +9,20 @@ jobs:
   main:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Github Checkout
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - uses: nrwl/nx-set-shas@v2
+
+      - name: Setup Node.js environment     
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'yarn'
+
+      - name: Set nx SHA versions
+        uses: nrwl/nx-set-shas@v2
+      
       - run: yarn install --frozen-lockfile
       - run: yarn nx workspace-lint
       - run: yarn nx affected --target=lint --parallel=3
@@ -20,7 +30,7 @@ jobs:
       - run: yarn nx affected --target=e2e --parallel=3 --ci
       - run: yarn reports:coverage
       
-      - name: Coveralls
+      - name: Coveralls Reporter
         uses: coverallsapp/github-action@master
         with:
             github-token: ${{ secrets.GITHUB_TOKEN }}
