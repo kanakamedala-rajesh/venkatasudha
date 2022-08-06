@@ -1,5 +1,5 @@
-import { Icon, NetworkConnectionIcon } from '@rajesh542/core-components';
-import { portfolioCore } from '@rajesh542/portfolio-core';
+import { Icon, NetworkConnectionIcon } from '@venkatasudha/core-components';
+import { portfolioCore } from '@venkatasudha/portfolio-core';
 import { FaLaptopCode } from 'react-icons/fa';
 
 export function Index() {

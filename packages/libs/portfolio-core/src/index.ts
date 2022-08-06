@@ -1,2 +1,2 @@
-export * from '@rajesh542/core';
+export * from '@venkatasudha/core';
 export * from './lib/PortfolioCore';

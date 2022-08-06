@@ -15,11 +15,13 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@rajesh542/core": ["packages/libs/core/src/index.ts"],
-      "@rajesh542/core-components": [
+      "@venkatasudha/core": ["packages/libs/core/src/index.ts"],
+      "@venkatasudha/core-components": [
         "packages/libs/core-components/src/index.ts"
       ],
-      "@rajesh542/portfolio-core": ["packages/libs/portfolio-core/src/index.ts"]
+      "@venkatasudha/portfolio-core": [
+        "packages/libs/portfolio-core/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { pascalCase } from '@rajesh542/portfolio-core';
+import { pascalCase } from '@venkatasudha/portfolio-core';
 @Injectable()
 export class AppService {
   getData(): { message: string } {
