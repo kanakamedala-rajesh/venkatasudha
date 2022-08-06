@@ -52,3 +52,6 @@ Thumbs.db
 
 # Env variable files
 **/**.env
+
+# Next.js
+.next

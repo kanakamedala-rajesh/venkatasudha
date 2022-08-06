@@ -1,4 +1,6 @@
-# VENKATASUDHA [![CI](https://github.com/kanakamedala-rajesh/venkatasudha/actions/workflows/nx_workflow.yml/badge.svg?branch=dev)](https://github.com/kanakamedala-rajesh/venkatasudha/actions/workflows/nx_workflow.yml)
+# VENKATASUDHA 
+[![CI Build](https://github.com/kanakamedala-rajesh/venkatasudha/actions/workflows/dev_build.yml/badge.svg)](https://github.com/kanakamedala-rajesh/venkatasudha/actions/workflows/dev_build.yml)
+[![Coverage Status](https://coveralls.io/repos/github/kanakamedala-rajesh/venkatasudha/badge.svg?branch=dev)](https://coveralls.io/github/kanakamedala-rajesh/venkatasudha?branch=dev)
 
 venkatasudha is a mono repository that contains all javascript and typescript based web applications and libraries.
 

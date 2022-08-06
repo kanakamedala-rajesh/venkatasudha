@@ -13,7 +13,8 @@
       },
       "configurations": {
         "development": {
-          "dev": true
+          "dev": true,
+          "outputPath": "packages/apps/portfolio-client"
         },
         "production": {
           "dev": false
