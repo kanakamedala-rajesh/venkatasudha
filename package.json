@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "clean": "rimraf dist coverage cypress tmp && yarn install",
-    "validate-push": "run-p clean test:** e2e:**",
+    "validate:push": "run-s clean test:** e2e:** serve:portfolio",
     "build:all": "nx affected --target=build --parallel",
     "lint:all": "nx affected --target=lint --parallel",
     "e2e:all": "nx affected --target=e2e --parallel --ci",
@@ -23,7 +23,7 @@
     "core-js": "^3.6.5",
     "framer-motion": "^6.5.1",
     "next": "12.2.3",
-    "next-pwa": "^5.5.4",
+    "next-pwa": "5.5.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.4.0",

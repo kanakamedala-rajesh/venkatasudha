@@ -1,4 +1,8 @@
-import { Icon, NetworkConnectionIcon } from '@venkatasudha/core-components';
+import {
+  Icon,
+  NetworkConnectionIcon,
+  SafeHydrate,
+} from '@venkatasudha/core-components';
 import { portfolioCore } from '@venkatasudha/portfolio-core';
 import { FaLaptopCode } from 'react-icons/fa';
 
@@ -10,7 +14,9 @@ export function Index() {
         Hello world!
       </h1>
       <span className="text-center">{portfolioCore()}</span>
-      <NetworkConnectionIcon />
+      <SafeHydrate>
+        <NetworkConnectionIcon />
+      </SafeHydrate>
     </div>
   );
 }

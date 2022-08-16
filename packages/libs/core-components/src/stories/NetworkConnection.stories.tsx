@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import NetworkConnectionIcon from '../lib/NetworkConnection.component';
+import NetworkConnectionIcon from '../components/networkConnection/NetworkConnection';
 
 export default {
   component: NetworkConnectionIcon,

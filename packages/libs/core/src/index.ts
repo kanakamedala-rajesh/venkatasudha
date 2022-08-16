@@ -1,2 +1,1 @@
-export * from './lib/Core';
-export * from './lib/StringUtils';
+export * from './utils';

@@ -1,4 +1,5 @@
-export * from './lib/CoreComponents';
-export * from './lib/Icon';
-export * from './lib/NetworkConnection.component';
-export { default as SafeHydrate } from './lib/SafeHydrate';
+export * from '@venkatasudha/core';
+
+export * from './components/icon/Icon';
+export * from './components/networkConnection/NetworkConnection';
+export * from './components/utils';

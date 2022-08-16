@@ -25,7 +25,7 @@ import {
   unescapeHtml,
   unhyphenate,
   upperCase
-} from '../src/lib/StringUtils';
+} from '../src/utils/StringUtils';
 
 describe('upper case test', () => {
   it('should work', () => {

@@ -1,7 +1,7 @@
-import { core } from '../src/lib/Core';
+import { module_name } from '../src/utils/Core';
 
 describe('core', () => {
   it('should work', () => {
-    expect(core()).toEqual('core');
+    expect(module_name()).toEqual('core');
   });
 });

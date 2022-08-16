@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import Icon from '../src/lib/Icon';
+import {Icon} from '../src';
 import { FaLaptopCode } from 'react-icons/fa';
 
 describe('Icon', () => {
