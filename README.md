@@ -47,6 +47,8 @@ venkatasudha is a mono repository that contains all javascript and typescript ba
 
 - `serve:portfolio` - script to build and serve production based next application
 
+- `upgrade:nx` - script to upgrade all nx depedencies to latest version. This upgrades to latest version, runs required migrations and performs cleanup.
+
 > NOTE: All `nx` affected script above are based of `dev` branch by default, If you would like to change this update `affected/defaultBase` property within `nx.json` file.
 
 ## Projects Dependency Graph
