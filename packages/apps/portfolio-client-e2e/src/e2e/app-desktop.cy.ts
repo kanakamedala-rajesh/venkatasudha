@@ -2,7 +2,7 @@ import { getGreeting, getIconText } from '../support/app.po';
 
 describe('portfolio-client', () => {
   beforeEach(() => {
-    cy.viewport('iphone-xr')
+    cy.viewport('macbook-16')
     cy.visit('/')
   });
 
@@ -14,7 +14,6 @@ describe('portfolio-client', () => {
     getGreeting().contains('Welcome to Home Page');
     getIconText().contains("RK");
 
-    cy.get("#mobile-menu-button").click()
     cy.get('a[href*="education"]').click()
 
     // The new url should include "/about"

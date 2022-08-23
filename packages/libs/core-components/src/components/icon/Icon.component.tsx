@@ -12,7 +12,10 @@ export function Icon(props: IconProps) {
     <Link href={props.linkURL ? props.linkURL : '#'}>
       <div className="text-primary hover:text-secondary flex cursor-pointer items-center">
         <props.icon className="mr-2 h-8 w-8" />
-        <span className="font-arimaMadurai self-center whitespace-nowrap text-2xl font-extrabold">
+        <span
+          id="icon-title"
+          className="font-arimaMadurai self-center whitespace-nowrap text-2xl font-extrabold"
+        >
           {props.name}
         </span>
       </div>

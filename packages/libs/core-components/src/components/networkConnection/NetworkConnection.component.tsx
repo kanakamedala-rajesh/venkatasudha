@@ -7,7 +7,7 @@ type NetworkConnectionProps = {
   offlineColor?: string;
 };
 
-export function NetworkConnectionIcon(props: NetworkConnectionProps) {
+export function NetworkConnection(props: NetworkConnectionProps) {
   const state = useNetworkState();
   const iconSizeClasses = 'h-8 w-8 md:h-9 md:w-9';
 
@@ -34,4 +34,4 @@ export function NetworkConnectionIcon(props: NetworkConnectionProps) {
   );
 }
 
-export default NetworkConnectionIcon;
+export default NetworkConnection;

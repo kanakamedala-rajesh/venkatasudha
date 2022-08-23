@@ -103,10 +103,6 @@
     @apply bg-background text-onBackground m-0 min-h-full w-screen;
   }
 
-  h1 {
-    @apply font-arimaMadurai;
-  }
-
   span {
     @apply font-rubik;
   }

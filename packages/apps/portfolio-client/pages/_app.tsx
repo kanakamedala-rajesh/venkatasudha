@@ -1,7 +1,10 @@
 import '../styles/globals.css';
 
+import { Navbar } from '@venkatasudha/core-components';
+import { isActiveLink, NAVBAR_ITEMS } from '@venkatasudha/portfolio-core';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
+import Link from 'next/link';
 
 export default function MyApp({ Component, pageProps, router }: AppProps) {
   return (
@@ -42,10 +45,33 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
           type="image/png"
           sizes="32x32"
         />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png"></link>
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <Navbar iconString={'RK'}>
+        {NAVBAR_ITEMS.map((item) => {
+          return (
+            <li
+              key={item._id}
+              className={
+                isActiveLink(item.url, router.pathname)
+                  ? 'gradient-underlined-text font-arimaMadurai p-4 text-lg font-extrabold'
+                  : 'navlink font-spinnaker text-primary hover:text-secondary transform cursor-pointer p-4 text-lg font-extrabold outline-hidden transition-all duration-300'
+              }
+            >
+              <Link href={item.url}>
+                <a
+                  // onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                  className="cursor-pointer"
+                >
+                  {item.navbarItem}
+                </a>
+              </Link>
+            </li>
+          );
+        })}
+      </Navbar>
       <Component {...pageProps} />
     </>
   );

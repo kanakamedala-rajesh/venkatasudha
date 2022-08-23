@@ -1,7 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { FaCode } from 'react-icons/fa';
-import { Icon } from '../components/icon/Icon';
-import '../styles/global.css';
+import { Icon } from './Icon.component';
 
 export default {
   component: Icon,
