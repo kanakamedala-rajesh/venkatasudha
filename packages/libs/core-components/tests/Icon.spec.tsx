@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
-
-import {Icon} from '../src';
 import { FaLaptopCode } from 'react-icons/fa';
+
+import { Icon } from '../src';
 
 describe('Icon', () => {
   it('should render successfully', () => {

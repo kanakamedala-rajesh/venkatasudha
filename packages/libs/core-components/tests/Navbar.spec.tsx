@@ -1,11 +1,10 @@
 import { render } from '@testing-library/react';
-import React from 'react';
 
-import Index from '../pages';
+import { Navbar } from '../src';
 
-describe('Index', () => {
+describe('Navbar', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<Index />);
+    const { baseElement } = render(<Navbar iconString={'RK'} />);
     expect(baseElement).toBeTruthy();
   });
 });

@@ -1,13 +1,14 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import NetworkConnectionIcon from '../components/networkConnection/NetworkConnection';
+import React from 'react';
+import { NetworkConnection } from '../src';
 
 export default {
-  component: NetworkConnectionIcon,
+  component: NetworkConnection,
   title: 'NetworkConnectionIcon',
-} as ComponentMeta<typeof NetworkConnectionIcon>;
+} as ComponentMeta<typeof NetworkConnection>;
 
-const Template: ComponentStory<typeof NetworkConnectionIcon> = (args) => (
-  <NetworkConnectionIcon {...args} />
+const Template: ComponentStory<typeof NetworkConnection> = (args) => (
+  <NetworkConnection {...args} />
 );
 
 export const Basic = Template.bind({});

@@ -1,11 +1,11 @@
 import { render } from '@testing-library/react';
 import React from 'react';
 
-import Index from '../pages';
+import Contact from '../pages/contact';
 
-describe('Index', () => {
+describe('Contact', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<Index />);
+    const { baseElement } = render(<Contact />);
     expect(baseElement).toBeTruthy();
   });
 });
