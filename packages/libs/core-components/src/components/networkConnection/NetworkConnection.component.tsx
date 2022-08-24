@@ -33,5 +33,3 @@ export function NetworkConnection(props: NetworkConnectionProps) {
     </div>
   );
 }
-
-export default NetworkConnection;

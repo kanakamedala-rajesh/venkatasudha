@@ -22,5 +22,3 @@ export function Icon(props: IconProps) {
     </Link>
   );
 }
-
-export default Icon;
