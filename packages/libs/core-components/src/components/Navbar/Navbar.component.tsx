@@ -2,12 +2,10 @@ import { useState } from 'react';
 import { FaCode } from 'react-icons/fa';
 import { MdGridView } from 'react-icons/md';
 import { useWindowScroll } from 'react-use';
-import { SafeHydrate } from '../../utils';
-import Icon from '../Icon/Icon.component';
-import NetworkConnection from '../NetworkConnection/NetworkConnection.component';
+import { Icon, NetworkConnection, SafeHydrate } from '../..';
 
 export interface NavbarProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   iconString: string;
 }
 

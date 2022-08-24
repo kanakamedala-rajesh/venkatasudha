@@ -6,6 +6,7 @@
 ![GitHub](https://img.shields.io/github/license/kanakamedala-rajesh/venkatasudha?style=for-the-badge)
 ![GitHub contributors](https://img.shields.io/github/contributors/kanakamedala-rajesh/venkatasudha?style=for-the-badge)
 ![Website](https://img.shields.io/website?down_color=red&down_message=offline&label=Portfolio%20website&logo=portfolio-webite-status&style=for-the-badge&up_color=green&up_message=online&url=https%3A%2F%2Fportfolio.venkatasudha.com%2F)
+![Lines of code](https://img.shields.io/tokei/lines/github/kanakamedala-rajesh/venkatasudha?style=for-the-badge)
 
 venkatasudha is a mono repository that contains all javascript and typescript based web applications and libraries.
 
