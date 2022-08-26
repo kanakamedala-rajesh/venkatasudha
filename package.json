@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "clean": "rimraf dist coverage cypress tmp && yarn install",
-    "validate:push": "run-s clean test:** e2e:** serve:portfolio",
+    "validate:push": "run-s clean test:** reports:coverage e2e:** open:portfolio-client serve:portfolio",
     "build:all": "nx affected --target=build --parallel",
     "lint:all": "nx affected --target=lint --parallel",
     "e2e:all": "nx affected --target=e2e --parallel --ci",
@@ -13,6 +13,7 @@
     "serve:portfolio": "run-s serve:portfolio-client",
     "serve:portfolio-client": "nx run portfolio-client:build:production && nx run portfolio-client:serve:production",
     "reports:coverage": "node ./tools/scripts/coverageMerger.mjs",
+    "open:portfolio-client": "open-cli http://localhost:4200",
     "upgrade:nx": "nx migrate latest && nx migrate --run-migrations && rimraf migrations.json"
   },
   "private": true,
@@ -105,4 +106,3 @@
     "url-loader": "^3.0.0"
   }
 }
-
