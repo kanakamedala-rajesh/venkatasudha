@@ -29,9 +29,10 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/packages/libs/portfolio-core"],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "jestConfig": "packages/libs/portfolio-core/jest.config.ts",
+        "outputPath": "coverage/packages/libs/portfolio-core",
         "passWithNoTests": true
       }
     }

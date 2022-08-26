@@ -48,9 +48,10 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/packages/apps/portfolio-client"],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "jestConfig": "packages/apps/portfolio-client/jest.config.ts",
+        "outputPath": "coverage/packages/apps/portfolio-client",
         "passWithNoTests": true
       }
     },

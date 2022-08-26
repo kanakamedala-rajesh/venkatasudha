@@ -35,9 +35,10 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/packages/libs/core-components"],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "jestConfig": "packages/libs/core-components/jest.config.ts",
+        "outputPath": "coverage/packages/libs/core-components",
         "passWithNoTests": true
       }
     },
