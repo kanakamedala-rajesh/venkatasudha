@@ -4,17 +4,19 @@
   "license": "MIT",
   "scripts": {
     "clean": "rimraf dist coverage cypress tmp && yarn install",
-    "validate:push": "run-s clean test:** reports:coverage e2e:** open:portfolio-client serve:portfolio",
+    "validate:commit": "run-s clean test:** reports:coverage e2e:**",
+    "validate:all": "run-s validate:commit open:portfolio-client serve:portfolio-client",
     "build:all": "nx affected --target=build --parallel",
     "lint:all": "nx affected --target=lint --parallel",
-    "e2e:all": "nx affected --target=e2e --parallel --ci",
+    "e2e:all": "nx affected --target=e2e --parallel --ci=true",
     "test:all": "nx affected --target=test --parallel --coverage",
     "storybook:all": "nx affected --target=storybook --all --parallel",
     "serve:portfolio": "run-s serve:portfolio-client",
     "serve:portfolio-client": "nx run portfolio-client:build:production && nx run portfolio-client:serve:production",
     "reports:coverage": "node ./tools/scripts/coverageMerger.mjs",
     "open:portfolio-client": "open-cli http://localhost:4200",
-    "upgrade:nx": "nx migrate latest && nx migrate --run-migrations && rimraf migrations.json"
+    "upgrade:nx": "nx migrate latest && nx migrate --run-migrations && rimraf migrations.json",
+    "prepare": "husky install"
   },
   "private": true,
   "dependencies": {
@@ -39,6 +41,8 @@
   "devDependencies": {
     "@babel/core": "7.12.13",
     "@babel/preset-typescript": "7.12.13",
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
     "@nestjs/schematics": "9.0.1",
     "@nestjs/testing": "9.0.8",
     "@next/bundle-analyzer": "^12.2.5",
@@ -80,6 +84,7 @@
     "babel-jest": "27.5.1",
     "babel-loader": "8.1.0",
     "chance": "^1.1.8",
+    "commitizen": "^4.2.5",
     "cypress": "^10.2.0",
     "eslint": "~8.15.0",
     "eslint-config-next": "12.2.3",
@@ -89,6 +94,8 @@
     "eslint-plugin-jsx-a11y": "6.6.1",
     "eslint-plugin-react": "7.30.1",
     "eslint-plugin-react-hooks": "4.6.0",
+    "git-cz": "^4.9.0",
+    "husky": "^8.0.0",
     "jest": "27.5.1",
     "npm-run-all": "^4.1.5",
     "nx": "14.5.8",
@@ -104,5 +111,10 @@
     "ts-node": "10.9.1",
     "typescript": "~4.7.2",
     "url-loader": "^3.0.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "git-cz"
+    }
   }
 }

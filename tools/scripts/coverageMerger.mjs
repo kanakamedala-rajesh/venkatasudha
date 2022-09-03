@@ -21,7 +21,7 @@ const getLcovFiles = function (coverageDir) {
     ''
   );
   await fs.writeFile(path.resolve(mergedFile), mergedReport, (err) => {
-    if (err) throw err;
+    if (err) console.log('unable to generate coverage report', err);
     console.log('merged coverage file has been saved!');
   });
 })();
