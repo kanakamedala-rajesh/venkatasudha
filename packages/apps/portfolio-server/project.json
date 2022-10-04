@@ -4,13 +4,15 @@
   "projectType": "application",
   "targets": {
     "build": {
-      "executor": "@nrwl/node:webpack",
+      "executor": "@nrwl/webpack:webpack",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/packages/apps/portfolio-server",
         "main": "packages/apps/portfolio-server/src/main.ts",
         "tsConfig": "packages/apps/portfolio-server/tsconfig.app.json",
-        "assets": ["packages/apps/portfolio-server/src/assets"]
+        "assets": ["packages/apps/portfolio-server/src/assets"],
+        "target": "node",
+        "compiler": "tsc"
       },
       "configurations": {
         "production": {
